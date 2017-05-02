@@ -57,6 +57,23 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="scripts\angular\angular-animate.min.js.map" />
+    <Content Include="scripts\angular\angular-aria.min.js.map" />
+    <Content Include="scripts\angular\angular-cookies.min.js.map" />
+    <Content Include="scripts\angular\angular-loader.min.js.map" />
+    <Content Include="scripts\angular\angular-message-format.min.js.map" />
+    <Content Include="scripts\angular\angular-messages.min.js.map" />
+    <Content Include="scripts\angular\angular-parse-ext.min.js.map" />
+    <Content Include="scripts\angular\angular-resource.min.js.map" />
+    <Content Include="scripts\angular\angular-route.min.js.map" />
+    <Content Include="scripts\angular\angular-sanitize.min.js.map" />
+    <Content Include="scripts\angular\angular-touch.min.js.map" />
+    <Content Include="scripts\angular\angular.min.js.map" />
+    <Content Include="scripts\angular\errors.json" />
+    <Content Include="scripts\angular\smart-table.min.js.map" />
+    <Content Include="scripts\angular\version.json" />
+    <Content Include="scripts\jQuery\jquery-3.1.0.min.map" />
+    <Content Include="scripts\jQuery\jquery-3.1.0.slim.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -65,11 +82,55 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.module.js" />
+    <Content Include="app\controllers\test.controller.js" />
+    <Content Include="Content\main.css" />
+    <Content Include="index.html" />
+    <Content Include="scripts\angular\angular-animate.js" />
+    <Content Include="scripts\angular\angular-animate.min.js" />
+    <Content Include="scripts\angular\angular-aria.js" />
+    <Content Include="scripts\angular\angular-aria.min.js" />
+    <Content Include="scripts\angular\angular-cookies.js" />
+    <Content Include="scripts\angular\angular-cookies.min.js" />
+    <Content Include="scripts\angular\angular-csp.css" />
+    <Content Include="scripts\angular\angular-image-compress.js" />
+    <Content Include="scripts\angular\angular-loader.js" />
+    <Content Include="scripts\angular\angular-loader.min.js" />
+    <Content Include="scripts\angular\angular-message-format.js" />
+    <Content Include="scripts\angular\angular-message-format.min.js" />
+    <Content Include="scripts\angular\angular-messages.js" />
+    <Content Include="scripts\angular\angular-messages.min.js" />
+    <Content Include="scripts\angular\angular-mocks.js" />
+    <Content Include="scripts\angular\angular-parse-ext.js" />
+    <Content Include="scripts\angular\angular-parse-ext.min.js" />
+    <Content Include="scripts\angular\angular-resource.js" />
+    <Content Include="scripts\angular\angular-resource.min.js" />
+    <Content Include="scripts\angular\angular-route.js" />
+    <Content Include="scripts\angular\angular-route.min.js" />
+    <Content Include="scripts\angular\angular-sanitize.js" />
+    <Content Include="scripts\angular\angular-sanitize.min.js" />
+    <Content Include="scripts\angular\angular-scenario.js" />
+    <Content Include="scripts\angular\angular-touch.js" />
+    <Content Include="scripts\angular\angular-touch.min.js" />
+    <Content Include="scripts\angular\angular-translate.js" />
+    <Content Include="scripts\angular\angular-translate.min.js" />
+    <Content Include="scripts\angular\angular.js" />
+    <Content Include="scripts\angular\angular.min.js" />
+    <Content Include="scripts\angular\smart-table.js" />
+    <Content Include="scripts\angular\smart-table.min.js" />
+    <Content Include="scripts\bootstrap\bootstrap.js" />
+    <Content Include="scripts\bootstrap\bootstrap.min.js" />
+    <None Include="scripts\jQuery\jquery-3.1.0.intellisense.js" />
+    <Content Include="scripts\jQuery\jquery-3.1.0.js" />
+    <Content Include="scripts\jQuery\jquery-3.1.0.min.js" />
+    <Content Include="scripts\jQuery\jquery-3.1.0.slim.js" />
+    <Content Include="scripts\jQuery\jquery-3.1.0.slim.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
