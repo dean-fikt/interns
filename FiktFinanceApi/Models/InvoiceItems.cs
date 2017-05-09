@@ -9,6 +9,8 @@ namespace FiktFinanceApi.Models
     {
         public int IdInvoiceItems { get; set; }
 
+        public int IdInvoice { get; set; }
+
         public int IdItem { get; set; }
 
         public decimal InQuantity { get; set; }
