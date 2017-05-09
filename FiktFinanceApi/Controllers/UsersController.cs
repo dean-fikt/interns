@@ -56,5 +56,6 @@ namespace FiktFinanceApi.Controllers
                 return userList;
             }
         }
+
     }
 }

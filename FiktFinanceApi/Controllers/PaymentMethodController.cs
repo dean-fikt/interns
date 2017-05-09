@@ -52,5 +52,6 @@ namespace FiktFinanceApi.Controllers
                 return payMethodList;
             }
         }
+
     }
 }

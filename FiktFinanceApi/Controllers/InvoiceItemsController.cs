@@ -70,5 +70,6 @@ namespace FiktFinanceApi.Controllers
                 return invoiceItemsList;
             }
         }
+
     }
 }

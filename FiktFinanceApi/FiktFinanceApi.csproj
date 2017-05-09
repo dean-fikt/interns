@@ -141,6 +141,12 @@
     <Compile Include="Controllers\DocumentTypeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoiceController.cs" />
+    <Compile Include="Controllers\InvoiceItemsController.cs" />
+    <Compile Include="Controllers\ItemCategoryController.cs" />
+    <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="Controllers\MetricsController.cs" />
+    <Compile Include="Controllers\PaymentMethodController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Models\Currency.cs" />
     <Compile Include="Models\Customer.cs" />

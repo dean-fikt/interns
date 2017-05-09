@@ -66,4 +66,5 @@ namespace FiktFinanceApi.Controllers
             }
         }
     }
+
 }
