@@ -57,5 +57,82 @@ namespace FiktFinanceApi.Controllers
             }
         }
 
+        [HttpPost]
+        public User AddUser(User response)
+        {
+            var conn = ConfigurationManager.ConnectionStrings[GetConnectionStringName()].ConnectionString;
+            try
+            {
+                using (var con = new SqlConnection(conn))
+                {
+                    var command = new SqlCommand("USP_User_Insert", con) { CommandType = CommandType.StoredProcedure };
+                    command.Parameters.AddWithValue("@UserName", response.FirstName);
+                    command.Parameters.AddWithValue("@UserSurname", response.LastName);
+                    command.Parameters.AddWithValue("@UserEmail", response.Email);
+                    command.Parameters.AddWithValue("@UserPassword", response.Password);
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    con.Close();
+                    return response;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Status = ResponseStatus.Error;
+                response.Message = "RequestFailed";
+                return response;
+            }
+        }
+
+        [HttpPut]
+        public User UpdateUser(User response)
+        {
+            var conn = ConfigurationManager.ConnectionStrings[GetConnectionStringName()].ConnectionString;
+            try
+            {
+                using (var con = new SqlConnection(conn))
+                {
+                    var command = new SqlCommand("USP_User_Update", con) { CommandType = CommandType.StoredProcedure };
+                    command.Parameters.AddWithValue("@UserEmail", response.Email);
+                    command.Parameters.AddWithValue("@UserPassword", response.Password);
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    con.Close();
+                    return response;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Status = ResponseStatus.Error;
+                response.Message = "RequestFailed";
+                return response;
+
+            }
+        }
+
+        [HttpDelete]
+        public string DeleteUser(string userEmail)
+        {
+            var conn = ConfigurationManager.ConnectionStrings[GetConnectionStringName()].ConnectionString;
+            try
+            {
+                using (var con = new SqlConnection(conn))
+                {
+                    var command = new SqlCommand("USP_User_Delete", con) { CommandType = CommandType.StoredProcedure };
+                    command.Parameters.AddWithValue("@UserEmail", userEmail);
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    con.Close();
+                    return "Deleted";
+                }
+            }
+            catch (Exception ex)
+            {
+                return "Request Failed";
+
+            }
+        }
+
     }
+
 }
