@@ -1,6 +1,6 @@
-D:\Projects\FiktInterns\FiktFinance\bin\FiktFinance.dll.config
-D:\Projects\FiktInterns\FiktFinance\bin\FiktFinance.dll
-D:\Projects\FiktInterns\FiktFinance\bin\FiktFinance.pdb
-D:\Projects\FiktInterns\FiktFinance\obj\Debug\FiktFinance.csprojResolveAssemblyReference.cache
-D:\Projects\FiktInterns\FiktFinance\obj\Debug\FiktFinance.dll
-D:\Projects\FiktInterns\FiktFinance\obj\Debug\FiktFinance.pdb
+C:\Users\Andrea\Desktop\interns\FiktFinance\bin\FiktFinance.dll.config
+C:\Users\Andrea\Desktop\interns\FiktFinance\bin\FiktFinance.dll
+C:\Users\Andrea\Desktop\interns\FiktFinance\bin\FiktFinance.pdb
+C:\Users\Andrea\Desktop\interns\FiktFinance\obj\Debug\FiktFinance.dll
+C:\Users\Andrea\Desktop\interns\FiktFinance\obj\Debug\FiktFinance.pdb
+C:\Users\Andrea\Desktop\interns\FiktFinance\obj\Debug\FiktFinance.csprojResolveAssemblyReference.cache
