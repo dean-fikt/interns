@@ -4,3 +4,9 @@ C:\Users\Andrea\Desktop\interns\FiktFinance\bin\FiktFinance.pdb
 C:\Users\Andrea\Desktop\interns\FiktFinance\obj\Debug\FiktFinance.dll
 C:\Users\Andrea\Desktop\interns\FiktFinance\obj\Debug\FiktFinance.pdb
 C:\Users\Andrea\Desktop\interns\FiktFinance\obj\Debug\FiktFinance.csprojResolveAssemblyReference.cache
+C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinance\bin\FiktFinance.dll.config
+C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinance\bin\FiktFinance.dll
+C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinance\bin\FiktFinance.pdb
+C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinance\obj\Debug\FiktFinance.csprojResolveAssemblyReference.cache
+C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinance\obj\Debug\FiktFinance.dll
+C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinance\obj\Debug\FiktFinance.pdb

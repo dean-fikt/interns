@@ -30,9 +30,6 @@ C:\Users\Andrea\Desktop\interns\FiktFinanceApi\bin\Antlr3.Runtime.pdb
 C:\Users\Andrea\Desktop\interns\FiktFinanceApi\obj\Debug\FiktFinanceApi.csprojResolveAssemblyReference.cache
 C:\Users\Andrea\Desktop\interns\FiktFinanceApi\obj\Debug\FiktFinanceApi.dll
 C:\Users\Andrea\Desktop\interns\FiktFinanceApi\obj\Debug\FiktFinanceApi.pdb
-C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinanceApi\obj\Debug\FiktFinanceApi.csprojResolveAssemblyReference.cache
-C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinanceApi\obj\Debug\FiktFinanceApi.dll
-C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinanceApi\obj\Debug\FiktFinanceApi.pdb
 C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinanceApi\bin\FiktFinanceApi.dll.config
 C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinanceApi\bin\FiktFinanceApi.dll
 C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinanceApi\bin\FiktFinanceApi.pdb
@@ -62,3 +59,6 @@ C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinanceApi\bin\System.Web.WebPages.xml
 C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinanceApi\bin\System.Web.WebPages.Deployment.xml
 C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinanceApi\bin\System.Web.WebPages.Razor.xml
 C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinanceApi\bin\Antlr3.Runtime.pdb
+C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinanceApi\obj\Debug\FiktFinanceApi.csprojResolveAssemblyReference.cache
+C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinanceApi\obj\Debug\FiktFinanceApi.dll
+C:\Users\LENCHE\Desktop\х\VI\interns\FiktFinanceApi\obj\Debug\FiktFinanceApi.pdb
