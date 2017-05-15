@@ -13,7 +13,7 @@ namespace FiktFinanceApi.Controllers
         [HttpGet]
         public List<Currency> GetData()
         {
-            var conn = ConfigurationManager.ConnectionStrings[GetConnectionStringName()].ConnectionString;
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
             var currencyList = new List<Currency>();
             var response = new Currency
             {

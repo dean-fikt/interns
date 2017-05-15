@@ -8,9 +8,10 @@ namespace FiktFinanceApi.Controllers
 {
     public class BaseController : ApiController
     {
-        public string GetConnectionStringName()
+        public string ConnectionStringName()
         {
-            return System.Configuration.ConfigurationManager.AppSettings["connectionStringName"];
-        }
+            return System.Configuration.ConfigurationManager.AppSettings["connectionString"];
+
+         }
     }
 }

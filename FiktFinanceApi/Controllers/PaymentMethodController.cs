@@ -17,7 +17,7 @@ namespace FiktFinanceApi.Controllers
         public List<PaymentMethodFlag> GetData()
         {
             List<PaymentMethodFlag> payMethodList = new List<PaymentMethodFlag>();
-            var conn = ConfigurationManager.ConnectionStrings[GetConnectionStringName()].ConnectionString;
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
             var response = new PaymentMethodFlag
             {
                 Status = ResponseStatus.Success,

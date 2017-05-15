@@ -13,7 +13,7 @@ namespace FiktFinanceApi.Controllers
         [HttpGet]
         public List<DocumentType> GetData()
         {
-            var conn = ConfigurationManager.ConnectionStrings[GetConnectionStringName()].ConnectionString;
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
             var documentTypeList = new List<DocumentType>();
             var response = new DocumentType
             {

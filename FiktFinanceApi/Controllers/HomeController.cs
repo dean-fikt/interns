@@ -15,7 +15,7 @@ namespace FiktFinanceApi.Controllers
         [HttpGet]
         public TestResponse GetData(int parametarId)
         {
-            var conn = ConfigurationManager.ConnectionStrings[GetConnectionStringName()].ConnectionString;
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
             var response = new TestResponse
             {
                 Status = ResponseStatus.Success,

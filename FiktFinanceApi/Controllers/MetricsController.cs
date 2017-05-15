@@ -17,7 +17,7 @@ namespace FiktFinanceApi.Controllers
         public List<Metric> GetData()
         {
             List<Metric> metricList = new List<Metric>();
-            var conn = ConfigurationManager.ConnectionStrings[GetConnectionStringName()].ConnectionString;
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
             var response = new Metric
             {
                 Status = ResponseStatus.Success,

@@ -17,7 +17,7 @@ namespace FiktFinanceApi.Controllers
         public List<User> GetData()
         {
             List<User> userList = new List<User>();
-            var conn = ConfigurationManager.ConnectionStrings[GetConnectionStringName()].ConnectionString;
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
             var response = new User
             {
                 Status = ResponseStatus.Success,
@@ -28,14 +28,16 @@ namespace FiktFinanceApi.Controllers
                 {
                     var command = new SqlCommand("USP_User_Select", con) { CommandType = CommandType.StoredProcedure };
                     con.Open();
+
                     var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
                         var user = new User
                         {
-                            FirstName = reader["UserName"].ToString(),
-                            LastName = reader["UserSurname"].ToString(),
-                            Email = reader["UserEmail"].ToString()
+                            Id = Convert.ToInt32(reader["IDUser"]),
+                            FirstName = reader["FirstName"].ToString(),
+                            LastName = reader["LastName"].ToString(),
+                            Email = reader["email"].ToString()
                         };
                         response.FirstName = user.FirstName;
                         response.LastName = user.LastName;
@@ -60,7 +62,7 @@ namespace FiktFinanceApi.Controllers
         [HttpPost]
         public User AddUser(User response)
         {
-            var conn = ConfigurationManager.ConnectionStrings[GetConnectionStringName()].ConnectionString;
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
             try
             {
                 using (var con = new SqlConnection(conn))
@@ -87,12 +89,12 @@ namespace FiktFinanceApi.Controllers
         [HttpPut]
         public User UpdateUser(User response)
         {
-            var conn = ConfigurationManager.ConnectionStrings[GetConnectionStringName()].ConnectionString;
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
             try
             {
                 using (var con = new SqlConnection(conn))
                 {
-                    var command = new SqlCommand("USP_User_Update", con) { CommandType = CommandType.StoredProcedure };
+                    var command = new SqlCommand("USP_UserName_Update", con) { CommandType = CommandType.StoredProcedure };
                     command.Parameters.AddWithValue("@UserEmail", response.Email);
                     command.Parameters.AddWithValue("@UserPassword", response.Password);
                     con.Open();
@@ -113,7 +115,7 @@ namespace FiktFinanceApi.Controllers
         [HttpDelete]
         public string DeleteUser(string userEmail)
         {
-            var conn = ConfigurationManager.ConnectionStrings[GetConnectionStringName()].ConnectionString;
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
             try
             {
                 using (var con = new SqlConnection(conn))

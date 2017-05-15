@@ -17,7 +17,7 @@ namespace FiktFinanceApi.Controllers
         public List<InvoiceItems> GetData()
         {
             List<InvoiceItems> invoiceItemsList = new List<InvoiceItems>();
-            var conn = ConfigurationManager.ConnectionStrings[GetConnectionStringName()].ConnectionString;
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
             var response = new InvoiceItems
             {
                 Status = ResponseStatus.Success,
