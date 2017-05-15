@@ -17,7 +17,7 @@ namespace FiktFinanceApi.Controllers
         public List<ItemCategory> GetData()
         {
             List<ItemCategory> itemCategoryList = new List<ItemCategory>();
-            var conn = ConfigurationManager.ConnectionStrings[GetConnectionStringName()].ConnectionString;
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
             var response = new ItemCategory
             {
                 Status = ResponseStatus.Success,
