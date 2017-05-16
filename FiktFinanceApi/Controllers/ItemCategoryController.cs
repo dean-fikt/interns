@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Mvc;
 using FiktFinanceApi.Models;
 using System.Data.SqlClient;
@@ -33,13 +30,13 @@ namespace FiktFinanceApi.Controllers
                     {
                         var itemCategory = new ItemCategory
                         {
+                            Status = ResponseStatus.Success,
                             IdItemCategory = Convert.ToInt32(reader["IDItemCategory"]),
                             ItemCategoryName = reader["ItemCategory"].ToString()
                         };
                         response.IdItemCategory = itemCategory.IdItemCategory;
                         response.ItemCategoryName = itemCategory.ItemCategoryName;
-                        itemCategoryList.Add(response);
-
+                        itemCategoryList.Add(itemCategory);
                     }
                     con.Close();
                 }

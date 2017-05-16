@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Mvc;
 using FiktFinanceApi.Models;
 using System.Data;
@@ -33,12 +30,13 @@ namespace FiktFinanceApi.Controllers
                     {
                         var payMethod = new PaymentMethodFlag
                         {
+                            Status = ResponseStatus.Success,
                             Id = Convert.ToInt32(reader["IDPayMethod"]),
                             Flag = reader["FLag"].ToString()
                         };
                         response.Id = payMethod.Id;
                         response.Flag = payMethod.Flag;
-                        payMethodList.Add(response);
+                        payMethodList.Add(payMethod);
                     }
                     con.Close();
                 }

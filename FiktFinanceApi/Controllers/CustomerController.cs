@@ -30,12 +30,13 @@ namespace FiktFinanceApi.Controllers
                     {
                         var customer = new Customer
                         {
+                            Status = ResponseStatus.Success,
                             Id = Convert.ToInt32(reader["IDCustumer"]),
                             Name = reader["Name"].ToString(),
                         };
                         response.Id = customer.Id;
                         response.Name = customer.Name;
-                        customerList.Add(response);
+                        customerList.Add(customer);
                     }
                     con.Close();
                 }

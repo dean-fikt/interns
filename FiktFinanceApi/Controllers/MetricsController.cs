@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Mvc;
 using FiktFinanceApi.Models;
 using System.Data;
@@ -33,12 +30,13 @@ namespace FiktFinanceApi.Controllers
                     {
                         var metric = new Metric
                         {
+                            Status = ResponseStatus.Success,
                             Id = Convert.ToInt32(reader["IDMetric"]),
                             MetricName = reader["Metric"].ToString()
                         };
                         response.Id = metric.Id;
                         response.MetricName = metric.MetricName;
-                        metricList.Add(response);
+                        metricList.Add(metric);
                     }
                     con.Close();
                 }

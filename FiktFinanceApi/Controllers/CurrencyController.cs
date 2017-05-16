@@ -31,6 +31,7 @@ namespace FiktFinanceApi.Controllers
                     {
                         var currency = new Currency
                         {
+                            Status = ResponseStatus.Success,
                             Id = Convert.ToInt32(reader["IDCurrency"]),
                             CurrencyName = reader["Currency"].ToString(),
                             CurrencyValue = Convert.ToDecimal(reader["CurrencyValue"])
@@ -38,7 +39,7 @@ namespace FiktFinanceApi.Controllers
                         response.Id = currency.Id;
                         response.CurrencyName = currency.CurrencyName;
                         response.CurrencyValue = currency.CurrencyValue;
-                        currencyList.Add(response);
+                        currencyList.Add(currency);
                     }
                     con.Close();
                 }

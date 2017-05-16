@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Mvc;
 using FiktFinanceApi.Models;
 using System.Data;
@@ -28,12 +25,12 @@ namespace FiktFinanceApi.Controllers
                 {
                     var command = new SqlCommand("USP_User_Select", con) { CommandType = CommandType.StoredProcedure };
                     con.Open();
-
                     var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
                         var user = new User
                         {
+                            Status = ResponseStatus.Success,
                             Id = Convert.ToInt32(reader["IDUser"]),
                             FirstName = reader["FirstName"].ToString(),
                             LastName = reader["LastName"].ToString(),
@@ -42,9 +39,7 @@ namespace FiktFinanceApi.Controllers
                         response.FirstName = user.FirstName;
                         response.LastName = user.LastName;
                         response.Email = user.Email;
-
-                        userList.Add(response);
-
+                        userList.Add(user);
                     }
                     con.Close();
                 }

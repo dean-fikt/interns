@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Mvc;
 using FiktFinanceApi.Models;
 using System.Configuration;
@@ -31,8 +28,9 @@ namespace FiktFinanceApi.Controllers
                     var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        var invoice = new InvoiceItems
+                        var invoiceItems = new InvoiceItems
                         {
+                            Status = ResponseStatus.Success,
                             IdInvoiceItems = Convert.ToInt32(reader["IDInvoiceItems"]),
                             IdInvoice = Convert.ToInt32(reader["IDInvoice"]),
                             IdItem = Convert.ToInt32(reader["IDItem"]),
@@ -44,18 +42,18 @@ namespace FiktFinanceApi.Controllers
                             TaxRate = Convert.ToInt16(reader["TaxRate"]),
                             Discount = Convert.ToInt16(reader["Discount"])
                         };
-                        response.IdInvoiceItems = invoice.IdInvoiceItems;
-                        response.IdInvoice = invoice.IdInvoice;
-                        response.IdItem = invoice.IdItem;
-                        response.InQuantity = invoice.InQuantity;
-                        response.OutQuantity = invoice.OutQuantity;
-                        response.NetAmount = invoice.NetAmount;
-                        response.IdCurrency = invoice.IdCurrency;
-                        response.CurrencyValue = invoice.CurrencyValue;
-                        response.TaxRate = invoice.TaxRate;
-                        response.Discount = invoice.Discount;
+                        response.IdInvoiceItems = invoiceItems.IdInvoiceItems;
+                        response.IdInvoice = invoiceItems.IdInvoice;
+                        response.IdItem = invoiceItems.IdItem;
+                        response.InQuantity = invoiceItems.InQuantity;
+                        response.OutQuantity = invoiceItems.OutQuantity;
+                        response.NetAmount = invoiceItems.NetAmount;
+                        response.IdCurrency = invoiceItems.IdCurrency;
+                        response.CurrencyValue = invoiceItems.CurrencyValue;
+                        response.TaxRate = invoiceItems.TaxRate;
+                        response.Discount = invoiceItems.Discount;
 
-                        invoiceItemsList.Add(response);
+                        invoiceItemsList.Add(invoiceItems);
                        
                     }
                     con.Close();

@@ -28,14 +28,15 @@ namespace FiktFinanceApi.Controllers
                     var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        var customer = new DocumentType
+                        var documentType = new DocumentType
                         {
+                            Status = ResponseStatus.Success,
                             Id = Convert.ToInt32(reader["IDCustumerDocumentType"]),
                             Flag = reader["Flag"].ToString(),
                         };
-                        response.Id = customer.Id;
-                        response.Flag = customer.Flag;
-                        documentTypeList.Add(response);
+                        response.Id = documentType.Id;
+                        response.Flag = documentType.Flag;
+                        documentTypeList.Add(documentType);
                     }
                     con.Close();
                 }

@@ -30,6 +30,7 @@ namespace FiktFinanceApi.Controllers
                     {
                         var invoice = new Invoice
                         {
+                            Status = ResponseStatus.Success,
                             Id = Convert.ToInt32(reader["IDInvoice"]),
                             InvoiceNumber = Convert.ToInt32(reader["InvoiceNumber"]),
                             InvoiceYear = Convert.ToInt32(reader["InvoiceDate"]),
@@ -59,7 +60,7 @@ namespace FiktFinanceApi.Controllers
                         response.DueDate = invoice.DueDate;
                         response.Paid = invoice.Paid;
                         response.PaidDate = invoice.PaidDate;
-                        invoiceList.Add(response);
+                        invoiceList.Add(invoice);
                     }
                     con.Close();
                 }
