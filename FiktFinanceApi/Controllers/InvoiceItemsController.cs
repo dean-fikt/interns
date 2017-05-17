@@ -69,6 +69,60 @@ namespace FiktFinanceApi.Controllers
             }
         }
 
+        [HttpGet]
+        public InvoiceItems GetData(int id)
+        {
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
+            var response = new InvoiceItems
+            {
+                Status = ResponseStatus.Success,
+            };
+            try
+            {
+                using (var con = new SqlConnection(conn))
+                {
+                    var command = new SqlCommand("USP_InvoiceItems_SelectID", con) { CommandType = CommandType.StoredProcedure };
+                    con.Open();
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        var invoiceItems = new InvoiceItems
+                        {
+                            Status = ResponseStatus.Success,
+                            IdInvoiceItems = Convert.ToInt32(reader["IDInvoiceItems"]),
+                            IdInvoice = Convert.ToInt32(reader["IDInvoice"]),
+                            IdItem = Convert.ToInt32(reader["IDItem"]),
+                            InQuantity = Convert.ToDecimal(reader["INQuantity"]),
+                            OutQuantity = Convert.ToDecimal(reader["OUTQuantity"]),
+                            NetAmount = Convert.ToDecimal(reader["NetAmount"]),
+                            IdCurrency = Convert.ToInt32(reader["IDCurrency"]),
+                            CurrencyValue = Convert.ToDecimal(reader["CurrencyValue"]),
+                            TaxRate = Convert.ToInt16(reader["TaxRate"]),
+                            Discount = Convert.ToInt16(reader["Discount"])
+                        };
+                        response.IdInvoiceItems = invoiceItems.IdInvoiceItems;
+                        response.IdInvoice = invoiceItems.IdInvoice;
+                        response.IdItem = invoiceItems.IdItem;
+                        response.InQuantity = invoiceItems.InQuantity;
+                        response.OutQuantity = invoiceItems.OutQuantity;
+                        response.NetAmount = invoiceItems.NetAmount;
+                        response.IdCurrency = invoiceItems.IdCurrency;
+                        response.CurrencyValue = invoiceItems.CurrencyValue;
+                        response.TaxRate = invoiceItems.TaxRate;
+                        response.Discount = invoiceItems.Discount;
+                    }
+                    con.Close();
+                }
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.Status = ResponseStatus.Error;
+                response.Message = "RequestFailed";
+                return response;
+            }
+        }
+
         [HttpPost]
         public InvoiceItems AddInvoiceItems(InvoiceItems response)
         {
@@ -135,8 +189,9 @@ namespace FiktFinanceApi.Controllers
         }
 
 
+
         [HttpDelete]
-        public string DeleteInvoice(int ID)
+        public void DeleteInvoice(int id)
         {
             var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
             try
@@ -144,16 +199,16 @@ namespace FiktFinanceApi.Controllers
                 using (var con = new SqlConnection(conn))
                 {
                     var command = new SqlCommand("USP_InvoiceItems_Delete", con) { CommandType = CommandType.StoredProcedure };
-                    command.Parameters.AddWithValue("@IDInvoiceItems", ID);
+                    command.Parameters.AddWithValue("@IDInvoiceItems", id);
                     con.Open();
                     command.ExecuteNonQuery();
                     con.Close();
-                    return "Deleted";
+                    //return "Deleted";
                 }
             }
             catch (Exception ex)
             {
-                return "Request Failed";
+                //return "Request Failed";
             }
         }
 
