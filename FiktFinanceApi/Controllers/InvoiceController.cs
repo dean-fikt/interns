@@ -74,5 +74,101 @@ namespace FiktFinanceApi.Controllers
                 return invoiceList;
             }
         }
+
+        [HttpPost]
+        public Invoice AddInvoice(Invoice response)
+        {
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
+            try
+            {
+                using (var con = new SqlConnection(conn))
+                {
+                    var command = new SqlCommand("USP_Invoice_Insert", con) { CommandType = CommandType.StoredProcedure };
+                    command.Parameters.AddWithValue("@InvoiceNumber", response.InvoiceNumber);
+                    command.Parameters.AddWithValue("@InvoiceYear", response.InvoiceYear);
+                    command.Parameters.AddWithValue("@IDCustumer", response.IdCustomer);
+                    command.Parameters.AddWithValue("@InvoiceDate", response.InvoiceDate);
+                    command.Parameters.AddWithValue("@IDDocument", response.IdDocument);
+                    command.Parameters.AddWithValue("@ExternalInvoiceNumber", response.ExternalInvoiceNumber);
+                    command.Parameters.AddWithValue("@ExternalInvoiceDate", response.ExternallInvoiceDate);
+                    command.Parameters.AddWithValue("@IDUser", response.IdUser);
+                    command.Parameters.AddWithValue("@Description", response.Description);
+                    command.Parameters.AddWithValue("@IDPayMethod", response.IdPayMethod);
+                    command.Parameters.AddWithValue("@DueDate", response.DueDate);
+                    command.Parameters.AddWithValue("@Paid", response.Paid);
+                    command.Parameters.AddWithValue("@PaidDate", response.PaidDate);
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    con.Close();
+                    return response;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Status = ResponseStatus.Error;
+                response.Message = "RequestFailed";
+                return response;
+            }
+        }
+
+        [HttpPut]
+        public Invoice UpdateInvoice(Invoice response)
+        {
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
+            try
+            {
+                using (var con = new SqlConnection(conn))
+                {
+                    var command = new SqlCommand("USP_Invoice_Update", con) { CommandType = CommandType.StoredProcedure };
+                    command.Parameters.AddWithValue("@IDInvoice", response.Id);
+                    command.Parameters.AddWithValue("@InvoiceNumber", response.InvoiceNumber);
+                    command.Parameters.AddWithValue("@InvoiceYear", response.InvoiceYear);
+                    command.Parameters.AddWithValue("@IDCustumer", response.IdCustomer);
+                    command.Parameters.AddWithValue("@InvoiceDate", response.InvoiceDate);
+                    command.Parameters.AddWithValue("@IDDocument", response.IdDocument);
+                    command.Parameters.AddWithValue("@ExternalInvoiceNumber", response.ExternalInvoiceNumber);
+                    command.Parameters.AddWithValue("@ExternalInvoiceDate", response.ExternallInvoiceDate);
+                    command.Parameters.AddWithValue("@IDUser", response.IdUser);
+                    command.Parameters.AddWithValue("@Description", response.Description);
+                    command.Parameters.AddWithValue("@IDPayMethod", response.IdPayMethod);
+                    command.Parameters.AddWithValue("@DueDate", response.DueDate);
+                    command.Parameters.AddWithValue("@Paid", response.Paid);
+                    command.Parameters.AddWithValue("@PaidDate", response.PaidDate);
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    con.Close();
+                    return response;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Status = ResponseStatus.Error;
+                response.Message = "RequestFailed";
+                return response;
+            }
+        }
+
+
+        [HttpDelete]
+        public string DeleteInvoice(int ID)
+        {
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
+            try
+            {
+                using (var con = new SqlConnection(conn))
+                {
+                    var command = new SqlCommand("USP_Invoice_Delete", con) { CommandType = CommandType.StoredProcedure };
+                    command.Parameters.AddWithValue("@IDInvoice", ID);
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    con.Close();
+                    return "Deleted";
+                }
+            }
+            catch (Exception ex)
+            {
+                return "Request Failed";
+            }
+        }
     }
 }

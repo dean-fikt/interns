@@ -69,5 +69,93 @@ namespace FiktFinanceApi.Controllers
             }
         }
 
+        [HttpPost]
+        public InvoiceItems AddInvoiceItems(InvoiceItems response)
+        {
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
+            try
+            {
+                using (var con = new SqlConnection(conn))
+                {
+                    var command = new SqlCommand("USP_InvoiceItems_Insert", con) { CommandType = CommandType.StoredProcedure };
+                    command.Parameters.AddWithValue("@IDInvoice", response.IdInvoice);
+                    command.Parameters.AddWithValue("@IDItem", response.IdItem);
+                    command.Parameters.AddWithValue("@INQuantity", response.InQuantity);
+                    command.Parameters.AddWithValue("@OUTQuantity", response.OutQuantity);
+                    command.Parameters.AddWithValue("@NetAmount", response.NetAmount);
+                    command.Parameters.AddWithValue("@IDCurrency", response.IdCurrency);
+                    command.Parameters.AddWithValue("@CurrencyValue", response.CurrencyValue);
+                    command.Parameters.AddWithValue("@TaxRate", response.TaxRate);
+                    command.Parameters.AddWithValue("@Discount", response.Discount);
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    con.Close();
+                    return response;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Status = ResponseStatus.Error;
+                response.Message = "RequestFailed";
+                return response;
+            }
+        }
+
+        [HttpPut]
+        public InvoiceItems UpdateInvoiceItems(InvoiceItems response)
+        {
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
+            try
+            {
+                using (var con = new SqlConnection(conn))
+                {
+                    var command = new SqlCommand("USP_InvoiceItems_Update", con) { CommandType = CommandType.StoredProcedure };
+                    command.Parameters.AddWithValue("@IDInvoiceItems", response.IdItem);
+                    command.Parameters.AddWithValue("@IDInvoice", response.IdInvoice);
+                    command.Parameters.AddWithValue("@IDItem", response.IdItem);
+                    command.Parameters.AddWithValue("@INQuantity", response.InQuantity);
+                    command.Parameters.AddWithValue("@OUTQuantity", response.OutQuantity);
+                    command.Parameters.AddWithValue("@NetAmount", response.NetAmount);
+                    command.Parameters.AddWithValue("@IDCurrency", response.IdCurrency);
+                    command.Parameters.AddWithValue("@CurrencyValue", response.CurrencyValue);
+                    command.Parameters.AddWithValue("@TaxRate", response.TaxRate);
+                    command.Parameters.AddWithValue("@Discount", response.Discount);
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    con.Close();
+                    return response;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Status = ResponseStatus.Error;
+                response.Message = "RequestFailed";
+                return response;
+            }
+        }
+
+
+        [HttpDelete]
+        public string DeleteInvoice(int ID)
+        {
+            var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
+            try
+            {
+                using (var con = new SqlConnection(conn))
+                {
+                    var command = new SqlCommand("USP_InvoiceItems_Delete", con) { CommandType = CommandType.StoredProcedure };
+                    command.Parameters.AddWithValue("@IDInvoiceItems", ID);
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    con.Close();
+                    return "Deleted";
+                }
+            }
+            catch (Exception ex)
+            {
+                return "Request Failed";
+            }
+        }
+
     }
 }
