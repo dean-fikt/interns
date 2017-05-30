@@ -9,125 +9,215 @@
     <link href="Content/bootstrap.yeti.min.css" rel="stylesheet" />
 </head>
 <body ng-app="app">
-    
-    <div ng-view>
 
+    <div ng-view>
 
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div>
                     <p class="navbar-brand navbar-left ">FIKT FINANCE</p>
                 </div>
-                <p class="navbar-text navbar-right "><a href="#" class="navbar-link">Logggg out</a></p>
-                <p class="navbar-text navbar-right ">Signed in as User Name(ID?)</p>
+                <div>
+                    <p class="navbar-text navbar-right "><a href="#" class="navbar-link">Log out</a></p>
+                </div>
+                <div>
+                    <p class="navbar-text navbar-right ">Signed in as User Name(ID?)</p>
+                </div>
             </div>
         </nav>
 
-
         <form>
             <fieldset class="col-lg-10 col-lg-offset-1">
-                <legend> INVOICE </legend>
-                <div class="container">
+                <legend> ФАКТУРА </legend>
+                <div class="container" style="margin: 20px 0px 20px 0px; padding: 30px ; background-color: #dddddd ">
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 control-label">Document ID </label>
+                            <label class="col-sm-3 control-label"><strong>Идентификационен број: </strong></label>
                             <div class="col-sm-9">
-                                <input class="form-control" type="text" placeholder="Privremeno" disabled>
+                                <input class="form-inline" type="text" placeholder="Privremeno" disabled>
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label class="col-sm-3 control-label">
-                                Doctype
+                                <strong>Тип на документ:</strong>
                             </label>
                             <div class="col-sm-9">
-                                <select class="form-control">
+                                <select class="form-inline">
                                     <option>Влезен</option>
                                     <option>Излезен</option>
                                 </select>
                             </div>
-
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-3 control-label">Invoice Number  </label>
-                            <div class="col-sm-9"><input type="text" class="form-control" /></div>
+                            <label class="col-sm-3 control-label"><strong>Број на фактура:</strong>  </label>
+                            <div class="col-sm-9"><input type="text" class="form-inline" /></div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-3 control-label">Invoice Date </label>
-                            <div class="col-sm-9"><input type="date" class="form-control" /></div>
+                            <label class="col-sm-3 control-label"><strong>Дата на фактура: </strong></label>
+                            <div class="col-sm-9"><input type="date" class="form-inline" /></div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-3 control-label">Invoice Year  </label>
+                            <label class="col-sm-3 control-label"><strong>Година на фактура:</strong>  </label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" />
+                                <input type="number" class="form-inline" />
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-3 control-label"> Customer</label>
+                            <label class="col-sm-3 control-label"><strong> Customer:</strong></label>
                             <div class="col-sm-9">
-                                <select class="form-control">
+                                <select class="form-inline">
                                     <option>Customer1</option>
                                     <option>Customer2</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label class="col-sm-3 control-label">Payment method</label>
-                            <div class="col-sm-9">
-                                <select class="form-control">
-                                    <option>Cash</option>
-                                    <option>Invoice</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-3 control-label">Due Date </label>
-                            <div class="col-sm-9">
-                                <input type="date" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-3 control-label">Paid </label>
-                            <div class="col-sm-1">
-                                <input type="checkbox" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-3 control-label">Payment Date </label>
-                            <div class="col-sm-9">
-                                <input type="date" class="form-control" />
-                            </div>
-                        </div>
                     </div>
-
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 control-label">External Invoice Number </label>
+                            <label class="col-sm-3 control-label"><strong>Надворешен број на фактура:</strong> </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-inline" />
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-3 control-label">External Invoice Date </label>
+                            <label class="col-sm-3 control-label"><strong>Надворешна дата на фактура:</strong> </label>
                             <div class="col-sm-9">
-                                <input type="date" class="form-control" />
+                                <input type="date" class="form-inline" />
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-3 control-label">Description/Comments </label>
+                            <label class="col-sm-3 control-label"><strong>Опис:</strong> </label>
                             <div class="col-sm-9">
-                                <textarea rows="5" class="form-control"> </textarea>
+                                <textarea rows="5" class="form-inline"> </textarea>
                             </div>
+                        </div>
+
+                        <div style="margin:70px 100px 50px 50px">
+                            <button type="button" style=" width: 100px" class="btn btn-success btn-md pull-right ">ВНЕСИ</button>
                         </div>
                     </div>
                 </div>
             </fieldset>
+        </form>
 
-            <div class=" btn-toolbar col-md-10">
-                <button type="button" class="btn btn-default pull-right ">Change</button>
-                <button type="button" class="btn btn-default pull-right">Save</button>
-                <button type="button" class="btn btn-default pull-right">Delete</button>
-            </div>
+
+        <form>
+            <fieldset class="col-lg-10 col-lg-offset-1">
+                <legend> ФАКТУРА  бр..</legend>
+                <div class="container">
+
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading"><strong>Ставки</strong></div>
+
+                        <!-- Table -->
+                        <div class="table-responsive">
+                            <table class="table" id="myTable">
+
+                                <tr>
+                                    <th col-lg-1>Категорија:</th>
+                                    <th col-lg-1>Ставка:</th>
+                                    <th col-lg-1>Количина:</th>
+                                    <th col-lg-1>Нето износ:</th>
+                                    <th col-lg-1>Валута:</th>
+                                    <th col-lg-1>Данок:</th>
+                                    <th col-lg-1>Попуст:</th>
+                                    <th col-lg-1>Бруто износ:</th>
+                                    <th col-lg-1>     </th>
+
+                                <tr class="stavka">
+                                    <td col-lg-1>
+                                        <select class="form-inline">
+                                            <option>пр 1</option>
+                                            <option>пр 2</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select class="form-inline">
+                                            <option>Ставка 1</option>
+                                            <option>Ставка 2</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="number" class="form-inline" />
+                                    </td>
+                                    <td>
+                                        <input type="number" class="form-inline" />
+                                    </td>
+                                    <td>
+                                        <select>
+                                            <option>MKD</option>
+                                            <option>EUR</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-inline" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-inline" />
+                                    </td>
+                                    <td>
+                                        <input type="number" class="form-inline" />
+                                    </td>
+                                    <td>
+                                        <button type="button" class="glyphicon glyphicon-plus"></button>
+
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+
+        <form>
+            <fieldset class="col-lg-10 col-lg-offset-1">
+                <legend> ДЕТАЛИ НА ПЛАЌАЊЕ</legend>
+                <div class="container" style="margin: 20px 0px 20px 0px; padding: 30px ; background-color: #dddddd ">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label"><strong>Начин на плаќање:</strong></label>
+                            <div class="col-sm-9">
+                                <select class="form-inline">
+                                    <option>Кеш- кеш -кеш $$$$$</option>
+                                    <option>Фактура</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label"><strong>Дата на доспевање: </strong></label>
+                            <div class="col-sm-9">
+                                <input type="date" class="form-inline" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label"><strong>Платено:</strong> </label>
+                            <div class="col-sm-1">
+                                <input type="checkbox" class="form-inline" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label"><strong>Дата на плаќање:</strong> </label>
+                            <div class="col-sm-9">
+                                <input type="date" class="form-inline" />
+                            </div>
+                        </div>
+
+                        <div style="margin: 50px 100px 50px 50px">
+                            <button style=" width: 100px" type="button" class="btn btn-success btn-md pull-right">ЗАЧУВАЈ</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </fieldset>
+
         </form>
     </div>
 
@@ -143,15 +233,10 @@
     <script src="Scripts/angular/angular-cookies.min.js"></script>
     <script src="scripts/bootstrap/bootstrap.min.js"></script>
     <script src="scripts/angular/angular-image-compress.js"></script>
-
     <!--modules-->
     <script src="app/app.module.js"></script>
     <!--controllers-->
     <script src="app/controllers/test.controller.js"></script>
-    <!--shared-->
-    <script src="app/shared/app.config.js"></script>
-    <script src="app/shared/repository.service.js"></script>
-    <script src="app/shared/web.service.js"></script>
     <!--jQuery-->
     <script>
         $(document).on('click', '.navbar-collapse.in', function (e) {
@@ -160,5 +245,6 @@
             }
         });
     </script>
+
 </body>
 </html>
