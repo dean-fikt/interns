@@ -23,7 +23,7 @@ namespace FiktFinanceApi.Controllers
             {
                 using (var con = new SqlConnection(conn))
                 {
-                    var command = new SqlCommand("USP_Document_Select", con) { CommandType = CommandType.StoredProcedure };
+                    var command = new SqlCommand("USP_Documents_Select", con) { CommandType = CommandType.StoredProcedure };
                     con.Open();
                     var reader = command.ExecuteReader();
                     while (reader.Read())
@@ -38,7 +38,7 @@ namespace FiktFinanceApi.Controllers
                         response.Id = document.Id;
                         response.Name = document.Name;
                         response.IdDocumentType = document.IdDocumentType;
-                        documentList.Add(document);
+                        documentList.Add(response);
                     }
                     con.Close();
                 }

@@ -36,7 +36,7 @@ namespace FiktFinanceApi.Controllers
                         };
                         response.Id = metric.Id;
                         response.MetricName = metric.MetricName;
-                        metricList.Add(metric);
+                        metricList.Add(response);
                     }
                     con.Close();
                 }

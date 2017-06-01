@@ -31,12 +31,12 @@ namespace FiktFinanceApi.Controllers
                         var documentType = new DocumentType
                         {
                             Status = ResponseStatus.Success,
-                            Id = Convert.ToInt32(reader["IDCustumerDocumentType"]),
+                            Id = Convert.ToInt32(reader["IDDocumentType"]),
                             Flag = reader["Flag"].ToString(),
                         };
                         response.Id = documentType.Id;
                         response.Flag = documentType.Flag;
-                        documentTypeList.Add(documentType);
+                        documentTypeList.Add(response);
                     }
                     con.Close();
                 }

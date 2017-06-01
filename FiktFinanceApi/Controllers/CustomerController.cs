@@ -36,7 +36,7 @@ namespace FiktFinanceApi.Controllers
                         };
                         response.Id = customer.Id;
                         response.Name = customer.Name;
-                        customerList.Add(customer);
+                        customerList.Add(response);
                     }
                     con.Close();
                 }

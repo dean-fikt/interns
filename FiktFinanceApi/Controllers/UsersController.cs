@@ -31,7 +31,6 @@ namespace FiktFinanceApi.Controllers
                         var user = new User
                         {
                             Status = ResponseStatus.Success,
-                            Id = Convert.ToInt32(reader["IDUser"]),
                             FirstName = reader["FirstName"].ToString(),
                             LastName = reader["LastName"].ToString(),
                             Email = reader["email"].ToString()
@@ -39,7 +38,7 @@ namespace FiktFinanceApi.Controllers
                         response.FirstName = user.FirstName;
                         response.LastName = user.LastName;
                         response.Email = user.Email;
-                        userList.Add(user);
+                        userList.Add(response);
                     }
                     con.Close();
                 }
