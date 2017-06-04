@@ -11,7 +11,7 @@ namespace FiktFinanceApi.Controllers
     public class CurrencyController : BaseController
     {
         [HttpGet]
-        public List<Currency> GetData()
+        public Currency GetData()
         {
             var conn = ConfigurationManager.ConnectionStrings[ConnectionStringName()].ConnectionString;
             var currencyList = new List<Currency>();
@@ -43,14 +43,14 @@ namespace FiktFinanceApi.Controllers
                     }
                     con.Close();
                 }
-                return currencyList;
+                return response;
             }
             catch (Exception ex)
             {
                 response.Status = ResponseStatus.Error;
                 response.Message = "RequestFailed";
                 currencyList.Add(response);
-                return currencyList;
+                return response;
             }
         }
     }
