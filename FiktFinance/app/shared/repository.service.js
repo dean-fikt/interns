@@ -9,10 +9,10 @@
 
                 return fn.apply(fn, args).then(
                     function (result) {
-                        return result.data;
+                        return result.response;
                     },
                     function (result) {
-                        return $q.reject(result.data);
+                        return $q.reject(result.response);
                     });
             };
         }
