@@ -12,6 +12,6 @@
         }
         return service;
     }
-    angular.module('app.shared').factory('webService', webService);
+    angular.module('app', []).factory('webService', webService);
     webService.$inject = ['webEndPoint', 'serviceRepository', '$http'];
 }());

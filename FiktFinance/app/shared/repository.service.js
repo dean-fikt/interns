@@ -29,6 +29,6 @@
             delete: fnxRequest($http.delete)
         };
     }
-    angular.module('app.shared').factory('serviceRepository', serviceRepository);
+    angular.module('app', []).factory('serviceRepository', serviceRepository);
     serviceRepository.$inject = ['$q', '$http', '$window'];
 })();
