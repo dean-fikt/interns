@@ -37,13 +37,19 @@
                                 <input class="form-inline" type="text" placeholder="Privremeno" disabled>
                             </div>
                         </div>
+                        <!--<select class="form-control" id="locationInput" 
+                            ng-options="option.Name for option in ctrlProject.locationsCollection
+                             track by option.Id"
+                             ng-model="ctrlProject.selectedLocation" select>-->
                         <div class="form-group row">
                             <label class="col-sm-3 control-label">
                                 <strong>Тип на документ:</strong>
                             </label>
                             <div class="col-sm-9">
-                                <select class="form-inline">
-                                    <option value="0">-Select Document Type</option>
+                                <select class="form-control" id="documentTypeInput" 
+                                        ng-options="option.Flag for option in ctrlDocumentType.docTypeCollection track by option.Id" 
+                                        ng-model="ctrlDocumentType.selectedDocType">
+                                    <option value="{{option.Id}}">{{option.Flag}}</option>
                                     <option></option>
                                    
                                 </select>
@@ -238,7 +244,7 @@
     <script src="app/app.module.js"></script>
     <!--controllers-->
     <script src="app/controllers/test.controller.js"></script>
-    <!--<script src="app/controllers/ctrlDocType.js"></script>-->
+    <script src="app/controllers/ctrlDocumentType.js"></script>
     <!--jQuery-->
     <script>
         $(document).on('click', '.navbar-collapse.in', function (e) {
