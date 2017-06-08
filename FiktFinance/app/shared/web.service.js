@@ -7,8 +7,13 @@
             var arr = 'името-на-контролерот/акцијата'; //currency/GetData;
             return serviceRepository.get([webEndPoint.baseUrl, arr].join(''), config);
         }
+        function getDocTypeData() {
+            var arr = 'documentType/GetData'; //currency/GetData;
+            return serviceRepository.get([webEndPoint.baseUrl, arr].join(''), config);
+        }
         var service = {
-            getData: getData
+            getData: getData,
+            getDocTypeData: getDocTypeData
         }
         return service;
     }
