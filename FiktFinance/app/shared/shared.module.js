@@ -5,8 +5,9 @@
     * @ngdoc overview
     * @name app
     * @description
-    * The main application module
+    * The shared application module
     */
-    var appModule = angular.module('app', ['app.shared']);
-   
+    angular.module('app.shared', [
+        /*Angular modules*/
+    ]);
 }());
