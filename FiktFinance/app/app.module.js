@@ -7,8 +7,6 @@
     * @description
     * The main application module
     */
-    var appModule = angular.module('app', [
-        
-    ]);
+    var appModule = angular.module('app', []);
    
 }());
