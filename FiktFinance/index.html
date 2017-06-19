@@ -146,8 +146,8 @@
                                         <input type="number" class="form-inline" />
                                     </td>
                                     <td>
-                                        <select class="form-inline">
-                                            <option></option>
+                                        <select class="form-inline" ng-options="option.CurrencyName for option in ctrl.currencyCollection track by option.Id" ng-model="ctrl.selectedCurrency">
+                                            <option value="{{option.Id}}">{{option.CurrencyName}}</option>
                                         </select>
                                     </td>
                                     <td>

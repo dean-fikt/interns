@@ -127,13 +127,13 @@
             selectedItemCategory: null,
             selectedItem: null,
             selectedPayMethdod: null,
-            //selectedCurrency: null,
+            selectedCurrency: null,
             itemsCollection: [],
             itemCategoryCollection: [],
             docTypeCollection: [],
             customerCollection: [],
             payMethodCollection: [],
-            //currencyCollection: [],
+            currencyCollection: [],
     });
         //
         activate();
