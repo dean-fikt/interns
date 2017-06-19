@@ -53,7 +53,7 @@ namespace FiktFinanceApi.Controllers
                         response.TaxRate = invoiceItems.TaxRate;
                         response.Discount = invoiceItems.Discount;
 
-                        invoiceItemsList.Add(response);
+                        invoiceItemsList.Add(invoiceItems);
                        
                     }
                     con.Close();

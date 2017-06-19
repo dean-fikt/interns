@@ -38,7 +38,7 @@ namespace FiktFinanceApi.Controllers
                         response.FirstName = user.FirstName;
                         response.LastName = user.LastName;
                         response.Email = user.Email;
-                        userList.Add(response);
+                        userList.Add(user);
                     }
                     con.Close();
                 }

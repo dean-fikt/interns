@@ -36,7 +36,7 @@ namespace FiktFinanceApi.Controllers
                         };
                         response.IdItemCategory = itemCategory.IdItemCategory;
                         response.ItemCategoryName = itemCategory.ItemCategoryName;
-                        itemCategoryList.Add(response);
+                        itemCategoryList.Add(itemCategory);
                     }
                     con.Close();
                 }

@@ -3,17 +3,45 @@
     'use strict';
     function webService(webEndPoint, serviceRepository, $http) {
         var config = {};
-        function getData() {
-            var arr = 'името-на-контролерот/акцијата'; //currency/GetData;
+        function getCustomerData() {
+            var arr = 'customer/GetData';
             return serviceRepository.get([webEndPoint.baseUrl, arr].join(''), config);
         }
+
         function getDocTypeData() {
-            var arr = 'documentType/GetData'; //currency/GetData;
+            var arr = 'documentType/GetData';
             return serviceRepository.get([webEndPoint.baseUrl, arr].join(''), config);
         }
+
+        function getItemCategoryData() {
+            var arr = 'itemCategory/GetData';
+            return serviceRepository.get([webEndPoint.baseUrl, arr].join(''), config);
+        }
+
+        function getItemsData() {
+            var arr = 'items/GetData';
+            return serviceRepository.get([webEndPoint.baseUrl, arr].join(''), config);
+        }
+
+        function getPaymentMethodData() {
+            var arr = 'paymentMethod/GetData';
+            return serviceRepository.get([webEndPoint.baseUrl, arr].join(''), config);
+        }
+
+        function getCurrencyData() {
+            var arr = 'currency/GetData';
+            return serviceRepository.get([webEndPoint.baseUrl, arr].join(''), config);
+        }
+
+       
+
         var service = {
-            getData: getData,
-            getDocTypeData: getDocTypeData
+            getDocTypeData: getDocTypeData,
+            getCustomerData: getCustomerData,
+            getItemCategoryData: getItemCategoryData,
+            getItemsData: getItemsData,
+            getPaymentMethodData: getPaymentMethodData,
+            getCurrencyData: getCurrencyData,
         }
         return service;
     }

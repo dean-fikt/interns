@@ -36,7 +36,7 @@ namespace FiktFinanceApi.Controllers
                         };
                         response.Id = documentType.Id;
                         response.Flag = documentType.Flag;
-                        documentTypeList.Add(response);
+                        documentTypeList.Add(documentType);
                     }
                     con.Close();
                 }

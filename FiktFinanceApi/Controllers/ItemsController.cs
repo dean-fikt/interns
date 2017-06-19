@@ -46,7 +46,7 @@ namespace FiktFinanceApi.Controllers
                         response.NetAmount = item.NetAmount;
                         response.IdCurrency = item.IdCurrency;
                         response.TaxRate = item.TaxRate;
-                        itemsList.Add(response);
+                        itemsList.Add(item);
                     }
                     con.Close();
                 }

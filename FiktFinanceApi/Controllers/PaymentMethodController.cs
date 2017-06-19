@@ -36,7 +36,7 @@ namespace FiktFinanceApi.Controllers
                         };
                         response.Id = payMethod.Id;
                         response.Flag = payMethod.Flag;
-                        payMethodList.Add(response);
+                        payMethodList.Add(payMethod);
                     }
                     con.Close();
                 }
