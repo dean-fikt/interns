@@ -7,7 +7,7 @@
         function setUserData(u) {
             var arr = 'users/AddUser';
             data: u;
-            return serviceRepository.post([webEndPoint.baseUrl, arr].join(''), u);
+            return serviceRepository.post([webEndPoint.baseUrl, arr].join(''), u, config);
         }
 
         function getCustomerData() {
@@ -43,6 +43,7 @@
        
 
         var service = {
+            setUserData: setUserData,
             getDocTypeData: getDocTypeData,
             getCustomerData: getCustomerData,
             getItemCategoryData: getItemCategoryData,

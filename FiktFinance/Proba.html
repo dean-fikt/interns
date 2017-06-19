@@ -5,12 +5,12 @@
 	<meta charset="utf-8" />
 </head>
 <body ng-app="app">
-    <form ng-controller="ctrlSetData as ctrl">
-        <label>FirstName</label> <input ng-model="ctrl.selectedFirstName"/>
-        <label>LastName</label> <input ng-model="ctrl.selectedLastName" />
-        <label>email</label> <input ng-model="ctrl.selectedemail"/>
-        <label>password</label> <input ng-model="ctrl.selectedpasword"/>
-        <button type="button" ng-click="ctrl.setUserData();">Submit</button>
+    <form ng-controller="ctrlSetDataNew as ctrl">
+        <label>FirstName</label> <input type= "text" ng-model="ctrl.selectedFirstName"/>
+        <label>LastName</label> <input type= "text" ng-model="ctrl.selectedLastName" />
+        <label>email</label> <input type= "text" ng-model="ctrl.selectedemail"/>
+        <label>password</label> <input type= "text" ng-model="ctrl.selectedpasword"/>
+        <button type="button" ng-click="ctrl.submit()">Submit</button>
     </form>
 
     <!--external libraries-->
@@ -33,7 +33,7 @@
     <script src="app/shared/app.config.js"></script>
     <!--controllers-->
     <script src="app/controllers/test.controller.js"></script>
-    <script src="app/controllers/ctrlSetData.js"></script>
+    <script src="app/controllers/ctrlSetDataNew.js"></script>
     <!--jQuery-->
     <script>
         $(document).on('click', '.navbar-collapse.in', function (e) {
