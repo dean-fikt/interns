@@ -68,6 +68,8 @@
     <Content Include="Content\bootstrap.yeti.css" />
     <Content Include="Content\bootstrap.yeti.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\controllers\ctrlSetData.js" />
+    <Content Include="Proba.html" />
     <Content Include="scripts\angular\angular-animate.min.js.map" />
     <Content Include="scripts\angular\angular-aria.min.js.map" />
     <Content Include="scripts\angular\angular-cookies.min.js.map" />

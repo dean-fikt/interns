@@ -3,6 +3,13 @@
     'use strict';
     function webService(webEndPoint, serviceRepository, $http) {
         var config = {};
+
+        function setUserData(u) {
+            var arr = 'users/AddUser';
+            data: u;
+            return serviceRepository.post([webEndPoint.baseUrl, arr].join(''), u);
+        }
+
         function getCustomerData() {
             var arr = 'customer/GetData';
             return serviceRepository.get([webEndPoint.baseUrl, arr].join(''), config);

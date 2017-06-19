@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body ng-app="app">
+    <form ng-controller="ctrlSetData as ctrl">
+        <label>FirstName</label> <input ng-model="ctrl.selectedFirstName"/>
+        <label>LastName</label> <input ng-model="ctrl.selectedLastName" />
+        <label>email</label> <input ng-model="ctrl.selectedemail"/>
+        <label>password</label> <input ng-model="ctrl.selectedpasword"/>
+        <button type="button" ng-click="ctrl.setUserData();">Submit</button>
+    </form>
+
+    <!--external libraries-->
+    <script src="scripts/angular/angular.min.js"></script>
+    <script src="scripts/angular/angular-route.min.js"></script>
+    <script src="scripts/jQuery/jquery-3.1.0.min.js"></script>
+    <script src="scripts/angular/angular-animate.min.js"></script>
+    <script src="scripts/angular/angular-sanitize.min.js"></script>
+    <script src="scripts/angular/angular-translate.min.js"></script>
+    <script src="Scripts/angular/smart-table.min.js"></script>
+    <script src="Scripts/angular/angular-cookies.min.js"></script>
+    <script src="scripts/bootstrap/bootstrap.min.js"></script>
+    <script src="scripts/angular/angular-image-compress.js"></script>
+    <!--modules-->
+    <script src="app/app.module.js"></script>
+    <script src="app/shared/shared.module.js"></script>
+    <!--services-->
+    <script src="app/shared/repository.service.js"></script>
+    <script src="app/shared/web.service.js"></script>
+    <script src="app/shared/app.config.js"></script>
+    <!--controllers-->
+    <script src="app/controllers/test.controller.js"></script>
+    <script src="app/controllers/ctrlGetData.js"></script>
+    <!--jQuery-->
+    <script>
+        $(document).on('click', '.navbar-collapse.in', function (e) {
+            if ($(e.target).is('a')) {
+                $(this).collapse('hide');
+            }
+        });
+    </script>
+</body>
+</html>
